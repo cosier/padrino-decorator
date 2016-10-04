@@ -16,7 +16,7 @@ module Padrino
       class << self
         def registered(app)
           app.helpers Padrino::Decorator::DecorateHelpers
-          app.prerequisites << File.join(app.settings.root, 'decorators/**/*.rb')
+          app.prerequisites << Padrino.root('decorators/**/*.rb')
         end
         alias :included :registered
       end
